@@ -15,7 +15,7 @@ const AllBooks = () => {
     fetch();
   }, []);
   return (
-    <div className="bg-zinc-900 px-12 h-screen py-8">
+    <div className="bg-zinc-900 px-12 h-auto py-8">
       <h4 className="text-3xl text-yellow-100">All Books</h4>
       {!data && (
         <div className="w-full h-screen flex items-center justify-center">
