@@ -33,7 +33,7 @@ router.post("/place-order", authenticateToken, async (req, res) => {
 });
 
 //get order history of particular user
-router.get("get-order-history", authenticateToken, async (req, res) => {
+router.get("/get-order-history", authenticateToken, async (req, res) => {
   try {
     const { id } = req.headers;
     const userData = await User.findById(id).populate({
@@ -49,9 +49,9 @@ router.get("get-order-history", authenticateToken, async (req, res) => {
 });
 
 //get all orders ---admin
-router.get("get-all-orders", authenticateToken, async (req, res) => {
+router.get("/get-all-orders", authenticateToken, async (req, res) => {
   try {
-    const userData = await User.find()
+    const userData = await Order.find()
       .populate({
         path: "book",
       })
